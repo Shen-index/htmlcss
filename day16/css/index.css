@@ -1,0 +1,229 @@
+*{
+	margin: 0;
+	padding: 0;
+	
+}
+img{
+	width: 100%;
+	
+}
+
+a{
+	list-style: none;
+}
+
+html{
+	/* 适配设备宽度 */
+	font-size: calc(100vw / 414);
+}
+/* 头部搜索栏 */
+
+.nav{
+	height: 60rem;
+	width: 380rem;
+}
+
+.nav input{
+	width: 100%;
+	height: 100%;
+	
+}
+
+.nav i{
+	position: absolute;
+}
+
+.nav .fa-search{
+	left: 21rem;
+}
+
+.nav .fa-sliders{
+	right: 28rem;
+}
+
+/* 轮播图 */
+.banner{
+	position: relative;
+	width: 380rem;
+	height: 283rem;
+	margin: 0 auto;
+}
+
+.banner .img-list li{
+	position: absolute;
+	width: 100%;
+}
+.banner .img-list h2{
+	position: absolute;
+	font-weight: bold;
+	font-size: 18rem;
+	width: 160rem;
+	height: 54rem;
+	top: 150rem;
+	left: 20rem;
+}
+
+/* banner小点 */
+.pointer{
+	position: absolute;
+	bottom: 30rem;
+	left: 16rem;
+	display: flex;
+	
+}
+
+.pointer a{
+	width: 6rem;
+	height: 6rem;
+	background-color: #fff;
+	border-radius: 50%;
+	z-index: 999;
+	margin-right: 7rem;
+}
+
+/* 移动端没有hover，不需要考虑这个 */
+.pointer .active{
+	width: 24rem;
+	border-radius: 100rem;
+	background-color: #6CC510;
+}
+
+/* 电商 */
+.cate-list{
+	width: 380rem;
+	margin: 20rem auto;
+	
+}
+
+.cate-list header ,
+.featerd header{
+	display: flex;
+	justify-content: space-between;
+}
+
+.cate-list h3,
+.featerd h3{
+		font-size: 18rem;
+		line-height: 21rem;
+}
+
+.cate-list .fa-angle-right{
+		font-size: 18rem;
+		color: #868889;
+}
+
+/* 图标 */
+.cate-inner{
+	list-style: none;
+	display: flex;
+	margin-top: 17rem;
+	width: 100%;
+	/* 
+		设置滚动条
+			避免内容溢出，滑动盒子显示
+	 */
+	overflow: auto;
+	
+}
+
+.cate-inner li{
+	font-size: 18rem;
+}
+
+/* 让鱼和文字垂直对齐 */
+.cate-inner li a{
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+
+/* 开发不能这样写，直接给span设置一个名
+	起一个类名
+ */
+.cate-inner .cate-icon{
+	display: flex;
+	border-radius: 50%;
+	width: 52rem;
+	height: 52rem;
+	justify-content: center;
+	align-items: center;
+	color: orange;
+	background-color: #E6F2EA;
+}
+
+/* 所有图标的颜色 */
+
+.cate-inner li:nth-child(2) .cate-icon{
+	color: #F8644A;
+	background-color: #ffe9e5;
+}
+
+.cate-inner li:nth-child(3) .cate-icon{
+	color: #f5ba3c;
+	background-color: ;
+}
+
+.cate-inner li:nth-child(4) .cate-icon{
+	color: ;
+	background-color: ;
+}
+
+.cate-inner li:nth-child(5) .cate-icon{
+	color: ;
+	background-color: ;
+}
+
+.cate-inner li:nth-child(6) .cate-icon{
+	color: ;
+	background-color: ;
+}
+
+.cate-inner li:nth-child(7) .cate-icon{
+	color: ;
+	background-color: ;
+}
+
+
+
+/* 改变超链接颜色 */
+.cate-inner .cate-text{
+	font-size: 10rem;
+	color: #868889;
+	margin: 12rem 0;
+}
+
+
+.cate-inner li:nth-child(2) .cate-icon{
+	color: ;
+	background-color: ;
+}
+
+/* 特色商品 */
+.featerd{
+	width: 380rem;
+	margin: 0 auto;
+}
+
+.featerd-body{
+	list-style: none;
+	display: flex;
+	flex-flow: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.featerd-body li{
+	width: 181rem;
+	height: 234rem;
+	background-color: #bfa;
+	margin-bottom: 20rem;
+}
+
+.info {
+	position: relative;
+}
+
+.info .fa-heart{
+	position: absolute;
+	font-size: 14rem;
+}

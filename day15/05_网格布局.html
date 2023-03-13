@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>网格布局</title>
+		<style type="text/css">
+		.outer{
+			
+			display: grid;
+			border: 4px solid red;
+			grid-gap: 10px;
+			/* 
+				minmax（）:设置最小值，最大值-用来设置行和列的大小
+					auto：无限大
+					max-content: 容纳内容最大空间
+					min-content: 容纳内容最小空间
+			 */
+			/* 设置行的样式 */
+			/* grid-template-columns: 100px 200px minmax(auto, min-content); */
+			/* 设置列的高度 */
+			/* grid-auto-rows: minmax(200px, auto); */
+			
+			/* repeat()
+				- 自动重复设置行和列
+					auto-fill 自动计算列
+					auto-fit 自动计算列，尽量让列可以容纳所有元素
+			*/
+			grid-template-columns: repeat(auto-fill,minmax(100px, auto));
+			/* 设置行的宽度 */
+			grid-auto-rows: minmax(200px,auto);
+		}
+		.outer div{
+			border: 4px red solid;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<div class="outer">
+			<div class="box1">box1</div>
+			<div class="box2">box2</div>
+			<div class="box3">box3</div>
+			<div class="box4">box4</div>
+			<div class="box5">box5</div>
+			<div class="box5">box5</div>
+			<div class="box5">box5</div>
+			<div class="box3">box3</div>
+			<div class="box4">box4</div>
+			<div class="box5">box5</div>
+			<div class="box5">box5</div>
+			<div class="box5">box5</div><div class="box3">box3</div>
+			<div class="box4">box4</div>
+			<div class="box5">box5</div>
+			<div class="box5">box5</div>
+			<div class="box5">box5</div>
+		</div>
+	</body>
+</html>

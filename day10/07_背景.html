@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box1{
+				width: 400px;
+				height: 400px;
+				background: #bfa url(../图片/gif/WWF.jpg) no-repeat;
+				border: 10px double red;
+				background-size: cover;
+				/*background-clip: padding-box;*/
+				background-origin: content-box;
+				background-position: 0 0;
+				background: border-box;
+				padding: 40px;
+				/*
+				 - background-clip 裁剪 ;
+				 	可选值
+					 	border-box 默认值，背景会延伸到边框的下边
+					 	padding-box 背景会延伸到内边距下
+					 	content-box 背景只会在内容区显示
+				 
+				 - background-origin 设置背景图片定位的原点
+				 	可选值
+				 	padding-box 相当于padding定位
+					border-box相当于边框进行定位
+				 	
+				*/
+				/*线性渐变*/
+				/*background: linear-gradient(0deg,blue,red);*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+	</body>
+</html>

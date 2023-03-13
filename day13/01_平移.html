@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>平移</title>
+		<style>
+			body{
+				/* 视觉的长度 */
+				perspective: 800px;
+			}
+			.box1{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				margin: 100px auto;
+				transition: all 4s; 
+				/* 平移
+					不影响布局
+					transform: translateX(50%);
+						可选值：
+							translateX(50%)： x轴平移多少单位
+							translateY(): y轴平移
+							translateZ():Z轴平移
+							
+							单位
+							- px %
+							% 是根据本身的宽度去平移平均的2除
+				 */
+				
+				
+			}
+			.box1:hover,
+			.box2:hover{
+				transform: translateX(100px) translateY(100px) translateZ(200px);
+			}
+			.box2{
+				width: 200px;
+				height: 200px;
+				background-color: #bfa;
+				transition: all 4s; 
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+		<div class="box2"></div>
+	</body>
+</html>

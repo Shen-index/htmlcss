@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>精灵动画-雪碧图</title>
+		<style type="text/css">
+			.box1{
+				height: 271px;
+				width: 132px;
+				background: url(img/1.png);
+				/*transform: background-position;*/
+				
+				/*设置关键帧*/
+				/*
+					问题1，和过度一样只是图片的循环，不能单张页面走秀
+							解决一：将图片的偏移量设置为图片大小
+				 */
+				animation: move 5s steps(4) infinite;
+			}
+			
+			
+			
+			/*过度实现走路*/
+			/*.box1:hover{
+				background-position: -396px 0;
+			}*/
+			
+			
+			/*设置关键帧*/
+			@keyframes move{
+				from{
+					background-position: 0 0;
+				}
+				
+				to{
+					background-position: -528px 0;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+	</body>
+</html>

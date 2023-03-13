@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>京东顶部导航条</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <style>
+    	
+        body{
+            font: 12px/1.5 Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,"\5B8B\4F53",sans-serif;
+        	background: #EEEEEE;
+        }
+
+        a{
+            text-decoration: none;
+
+            /*
+                inherit 表示设置继承祖先的样式
+            */
+            color:inherit;
+        }
+
+        .outer{
+            min-width: 1190px;
+            height: 30px;
+            border-bottom: 1px #ddd solid;
+            background-color: #e3e4e5;
+        }
+
+        .menu{
+            width: 1190px;
+            height: 30px;
+            line-height: 30px;
+            margin: 0 auto;
+            color: #999;
+        }
+
+    /*    设置左侧菜单*/
+        .city{
+            float: left;
+            cursor: pointer;
+
+			position: relative;
+        }
+		/*设置下拉层的样式*/
+		.city .hover{
+			border: 1px solid #ccc;
+			
+			width: 300px;
+			height: 416px;
+			padding: 10px;
+background: #bfa;
+			position: absolute;
+			background: #fff;
+			top: 30px;
+			display: none;
+			z-index: 9999;
+		}
+		.city:hover .hover{
+			display: block;
+		}
+		
+	
+		
+        .city i{
+            color: #f10215;
+            font-size: 14px;
+        }
+
+        .city .current{
+        	position: relative;
+            padding: 0 7px;
+            border: 1px solid transparent;
+        	border-bottom: none;
+        	z-index: 99999;
+        }
+        .city:hover .current{
+        	background: #FFFFFF;
+        	border-color: #ccc;
+        }
+        .city .current span:hover{
+        	color: red;
+        }
+
+    /*    设置右侧菜单*/
+        .user-info{
+        	position: relative;
+            float: right;
+        }
+        .user-info:hover .hover{
+        	display: block;
+        }
+        .user-info li,
+        .user-info .line{
+            float: left;
+        }
+
+        .user-info li{
+            padding: 0 7px;
+        }
+
+        .user-info a:hover,
+        .user-info li>div:hover,
+        .user-info .hot{
+            color: #f10215;
+        }
+
+        /*设置小竖线*/
+        .user-info .line{
+            width: 1px;
+            height: 10px;
+            background-color: #ccc;
+            /*border-left: 1px #ccc solid;*/
+            margin: 10px 5px;
+
+        }
+		
+    </style>
+</head>
+<body>
+<!--创建一个外部容器-->
+<div class="outer">
+    <div class="menu">
+<!--        左侧菜单-->
+        <div class="city">
+            <div class="current">
+<!--                设置小图标-->
+                <i class="fa-solid fa-map-marker-alt"></i>
+                <span>北京</span>
+            </div>
+<!--	下拉的框架-->
+			<div class="hover">
+				
+			</div>
+        </div>
+<!--        右侧菜单-->
+        <ul class="user-info">
+            <li>
+                <a href="#">你好，请登录</a>
+            </li>
+            <li>
+                <a class="hot" href="#">免费注册</a>
+            </li>
+            <span class="line"></span>
+            <li>
+                <a href="#">我的订单</a>
+            </li>
+            <span class="line"></span>
+            <li>
+                <a href="#">我的京东</a>
+                <i class="fa-solid fa-angle-down"></i>
+            </li>
+            <div class="hover">
+				
+			</div>
+            <span class="line"></span>
+            <li>
+                <a class="hot" href="#">企业采购</a>
+                <i class="fa-solid fa-angle-down"></i>
+            </li>
+            <span class="line"></span>
+            <li>
+                <div>
+                    <span href="#">商家服务</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+            </li>
+            <span class="line"></span>
+            <li>
+                <div>
+                    <span href="#">网站导航</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+            </li>
+            <span class="line"></span>
+            <li>
+                <span href="#">手机京东</span>
+            </li>
+            <span class="line"></span>
+            <li>
+                <a href="#">网站无障碍</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript">
+	var item = ["faz","foo","baz"]
+	item.forEach(function(index,name,item){
+		console.log(index,name,item)
+	})
+</script>
+</html>

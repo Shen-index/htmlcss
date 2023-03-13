@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>京东顶部导航条</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/soushuo.css"/>
+    <style>
+    	
+        body{
+            font: 12px/1.5 Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,"\5B8B\4F53",sans-serif;
+        }
+
+        a{
+            text-decoration: none;
+
+            /*
+                inherit 表示设置继承祖先的样式
+            */
+            color:inherit;
+        }
+
+        .outer{
+            min-width: 1190px;
+            height: 30px;
+            border-bottom: 1px #ddd solid;
+            background-color: #e3e4e5;
+        }
+
+        .menu{
+            width: 1190px;
+            height: 30px;
+            line-height: 30px;
+            margin: 0 auto;
+            color: #999;
+        }
+
+    /*    设置左侧菜单*/
+        .city{
+            float: left;
+            cursor: pointer;
+        }
+
+
+
+/*下拉框*/
+
+        .city{
+        	position: relative;
+        	
+        }
+       	.city .hover{
+			border: 1px solid #ccc;
+			text-align: left;
+			width: 300px;
+			height: 416px;
+			padding: 10px;
+background: #bfa;
+			position: absolute;
+			background: #fff;
+			top: 30px;
+			display: none;
+			z-index: 9999;
+		}
+        .city:hover .hover{
+        	
+        	display: block;
+        }
+        .hr{
+        	
+        	width: 260px;
+        	margin: 0 auto;
+        	border-bottom: 1px solid #B0B0B0;
+        }
+        .city .current{
+        	border: 1px solid #e3e4e5;
+        	border-bottom: none;
+        	position: relative;
+        	
+        	z-index: 99999;
+        }
+        .city:hover .current{
+        	background: #fff;
+        	border-color: #ccc;
+        	
+        }  
+        .city .current span:hover{
+            color: red;
+        }
+        .hover > .one{
+            margin-bottom: 1px solid red;
+            clear: both;
+            
+        }
+        
+        .one li{
+        	float: left;
+        	width: 60px;
+        	text-align: center;
+           
+        }
+        .one a:hover{
+        	background: #b8b5b5;
+        	color: red;
+        	padding: 0 10px;
+        }
+        .two{
+        	clear: both;
+        }
+        .two ,.shree{
+        	padding: 20px;
+        }
+        .two p{
+        	text-align: left;
+        }
+        .two, .shree{
+            text-align: left;
+            
+        }
+        .two li , .shree li{
+        	float: left;
+        	width: 130px;
+        	
+        }
+        .two a:hover{
+        	
+        	color: red;
+        	
+        }
+        .shree{
+            clear: both;
+        }
+         .shree li{
+        	float: left;
+        	width: 130px;
+        	
+        }
+        .shree a:hover{
+        	
+        	color: red;
+        	
+        }
+        .city i{
+            color: #f10215;
+            font-size: 14px;
+        }
+
+        .city .current{
+            padding: 0 7px;
+        }
+
+    /*    设置右侧菜单*/
+        .user-info{
+            float: right;
+            
+        }
+        
+        .user-info li,
+        .user-info .line{
+            float: left;
+        }
+
+        .user-info li{
+            padding: 0 7px;
+        }
+
+    
+        .user-info li:hover,
+        .user-info .hot
+        
+        {
+            color: #f10215;
+        }
+		
+        /*设置小竖线*/
+        .user-info .line{
+            width: 1px;
+            height: 10px;
+            background-color: #ccc;
+            /*border-left: 1px #ccc solid;*/
+            margin: 10px 5px;
+
+        }
+       .jd_one{
+       		position: relative;
+       		border: 1px solid #e3e4e5;
+        	border-bottom: none;
+        	
+        	z-index: 99999;
+       }
+       .jd_one:hover{
+       	background: #fff;
+       	
+       }
+       .jd_one_1{
+       		
+       		left: 0;
+	       	text-align: left;
+	       	position: absolute;
+	       display: none;
+			background: #fff;
+			width: 280px;
+			height: 300px;
+			border: 1px solid #ccc;
+			color: #ccc;
+			
+       }
+      .jd_one_1{
+      	
+      	border: 1px solid #e3e4e5;
+      	border-top: none;
+      }
+      .jd_one_1 li{
+      	width: 70px;
+      }
+       .jd_one:hover .jd_one_1{
+       		display: block;
+       		
+       }
+       .jd_one_1_top, 
+       .jd_one_1_top1,
+       .jd_one_1_top2{
+       	padding: 10px;
+       	float: left;
+       	
+       }
+       .jd_one_1_top, 
+       .jd_one_1_top1
+       {
+       	border-bottom: 1px solid #ccc;
+       }
+       .jd_one_1_top a:hover, 
+       .jd_one_1_top1 a:hover,
+       .jd_one_1_top2 a:hover
+       {
+       	text-align: center;
+       	
+       	color: red;
+       }
+       
+       .jd_two{
+       	position: relative;
+       	border: 1px solid #e3e4e5;
+        	border-bottom: none;
+        	
+        	
+       }
+       .jd_two_1{
+       	position: absolute;
+       	display: none;
+       	width: 150px;
+       	height: 175px;
+       	border: 1px solid #ccc;
+		background-color: #fff;
+		z-index: 999;
+
+       }
+       .jd_two:hover .jd_two_1{
+	       	display: block;
+	       	border: 1px solid #ccc;
+	       	border-top: none;
+			color: #ccc;
+			
+			left: 0;
+			text-align: center;
+       }
+       .jd_two:hover,
+       .jd_shree:hover,
+       .jd_fore:hover,
+       .jd_five:hover
+       {
+       	background: #fff;
+       	border-bottom: none;
+       }
+       .jd_shree,
+       .jd_fore,
+       .jd_five{
+       		position: relative;
+       		
+       }
+       .jd_shree_1{
+	       	position:absolute;
+	       	display: none;
+	       	width: 170px;
+	       	height: 100px;
+	     	background: #FFF;
+	       	border: 1px solid #ccc;
+	       	color: #ccc;
+			z-index: 999;
+			top: 30;
+			right: 0;
+			padding: 10px 0;
+
+       }
+
+       .jd_shree_1 li {
+       	width: 70px;
+       	float: left;
+       }
+       .jd_shree:hover .jd_shree_1{
+       		display: block;
+       		
+			
+       }
+      
+       .jd_fore{
+       	text-align: center;
+       }
+       
+        .jd_fore_1{
+	       	position:absolute;
+	       	display: none;
+	       	width: 1170px;
+	       	height: 300px;
+	     	float: left;
+	       	border: 1px solid #ccc;
+	       	color: #ccc;
+			right: 0;
+			
+       }
+       .jd_fore_1{
+       	border: 1px solid #ccc;
+       	border-top: none;
+       	
+       }
+       .jd_fore_1 li {
+       	width: 70px;
+       	float: left;
+       }
+       .jd_fore:hover .jd_fore_1{
+       		display: block;
+       		
+			
+       }
+
+       .jd_five_1_top >img{
+       	padding: 10px 0 ;
+       	width: 90px;
+       	float: left;
+       }
+       .jd_five_1_top1 img{
+       		width: 90px;
+       	  	float: left;
+       	  	padding: 20px 0 
+       }
+       
+        .jd_five_1{
+	       	position:absolute;
+	       	display: none;
+	       	width: 200px;
+	       	height:650px;
+	      float: left;
+	       	border: 1px solid #ccc;
+	       	color: #ccc;
+			border-top: none;
+			text-align: left;
+			
+       }
+       .jd_five_1{
+       	border: 1px solid #ccc;
+       	border-top: none;
+       	
+       }
+       .jd_five_1 li {
+       	width: 70px;
+       	float: left;
+       }
+       .jd_five:hover .jd_five_1{
+       		display: block;
+       		
+			border: 1px solid #ccc;
+	       	border-top: none;
+			color: #ccc;
+			z-index: 999999;
+			left: 0;
+			text-align: left;
+			
+       }
+       .jd_five_1_top{
+       	padding: 10px 0 0 0;
+       	height: 120px;
+       	border-bottom: 1px solid #ccc;
+       
+       }
+	   .jd_one_jd{
+		border: 1px solid #e3e4e5;
+        	border-bottom: none;
+			
+	   }
+    </style>
+</head>
+<body>
+<!--创建一个外部容器-->
+<div class="outer">
+	
+    <div class="menu">
+
+<!--        左侧菜单-->
+        <div class="city">
+            <div class="current">
+<!--                设置小图标-->
+                <i class="fa-solid fa-map-marker-alt"></i>
+                <span>北京</span>
+            </div>
+            <div class="hover">
+            	<div class="one">
+                	<ul>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                        <li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                        <li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                        <li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                        <li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                        <li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                	</ul>
+                </div>
+                <div class="two">
+                	<div class="hr"></div>
+                	<p>item-1</p>
+                	<ul>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                	</ul>
+                </div>
+                <div class="shree">
+                	<div class="hr"></div>
+                	<h4>item-2</h4>
+                	<ul>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                		<li><a href="#">地区</a></li>
+                		
+                	</ul>
+                </div>
+            </div>
+        </div>
+<!--        右侧菜单-->
+        <ul class="user-info">
+            <li>
+                <a href="#">你好，请登录</a>
+            </li>
+            <li>
+                <a class="hot" href="#">免费注册</a>
+            </li>
+            <span class="line"></span>
+            <li>
+                <a href="#">我的订单</a>
+            </li>
+            <span class="line"></span>
+            <li class="jd_one">
+                <a href="#" class="jd_one_jd">我的京东</a>
+                <i class="fa-solid fa-angle-down"></i>
+               <div class="jd_one_1">
+                	<div class="jd_one_1_top">
+                		<ul>
+	                		<li><a href="#">待处理订单</a></li>
+	                		<li><a href="#">我的问答</a></li>
+	                		<li><a href="#">我的问答</a></li>
+	                		<li><a href="#">我的问答</a></li>
+	                		<li><a href="#">我的问答</a></li>
+	                		<li><a href="#">我的问答</a></li>
+                		</ul>
+                	</div>
+                	<div class="jd_one_1_top1">
+                		<ul>
+	                		<li><a href="#">待处理订单</a></li>
+	                		<li><a href="#">我的问答</a></li>
+	                		<li><a href="#">我的问答</a></li>
+	                		<li><a href="#">我的问答</a></li>
+	                		
+                		</ul>
+                	</div><div class="jd_one_1_top2">
+                		<ul>
+	                		<li><a href="#">待处理订单</a></li>
+	                		<li><a href="#">我的问答</a></li>
+	                		<li><a href="#">我的问答</a></li>
+	                		<li><a href="#">我的问答</a></li>
+	                		<li><a href="#">我的问答</a></li>
+	                		<li><a href="#">我的问答</a></li>
+	                		<li><a href="#">我的问答</a></li>
+	                		<li><a href="#">我的问答</a></li>
+	                		<li><a href="#">我的问答</a></li>
+                		</ul>
+                	</div>
+                </div>
+                
+            </li>
+             
+            <span class="line"></span>
+            <li class="jd_two">
+                <a class="hot" href="#">企业采购</a>
+                <i class="fa-solid fa-angle-down"></i>
+                <div class="jd_two_1">
+                	<div class="jd_two_1_top">
+                		<ul>
+	                		<li><a href="#">企业购</a></li>
+	                		<li><a href="#">公共采购</a></li>
+	                		<li><a href="#">工业品</a></li>
+	                		<li><a href="#">商用场景馆</a></li>
+	                		<li><a href="#">微信企业购</a></li>
+	                		<li><a href="#">工品优选</a></li>
+	                		<li><a href="#">京东锦礼</a></li>
+	                		<li><a href="#">企业购专业版</a></li>
+	                		<li><a href="#">大中型客户采购</a></li>
+	                		
+                		</ul>
+                	</div>
+                	
+                </div>
+            </li>
+            <span class="line"></span>
+            <li class="jd_shree">
+                <div>
+                    <span href="#">商家服务</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                    
+                </div>
+                <div class="jd_shree_1">
+                	<div class="jd_shree_1_top">
+                		<ul>
+	                		<li><a href="#">合作招商</a></li>
+	                		<li><a href="#">学习中兴</a></li>
+	                		<li><a href="#">商家后台</a></li>
+	                		<li><a href="#">金麦工作室</a></li>
+	                		<li><a href="#">商家帮组</a></li>
+	                		<li><a href="#">规则平台</a></li>
+	                		
+	                		
+                		</ul>
+                	</div>
+                	
+                </div>
+            </li>
+            <span class="line"></span>
+            <li class="jd_fore">
+                <div>
+                    <span href="#">网站导航</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+                 <div class="jd_fore_1">
+                	<div class="jd_fore_1_1">
+                		<ul>
+	                		<li><a href="#">合作招商</a></li>
+	                		<li><a href="#">学习中兴</a></li>
+	                		<li><a href="#">商家后台</a></li>
+	                		<li><a href="#">金麦工作室</a></li>
+	                		<li><a href="#">商家帮组</a></li>
+	                		<li><a href="#">规则平台</a></li>
+	                		
+	                		
+                		</ul>
+                	</div>
+                	<div class="jd_fore_1_2">
+                		<ul>
+	                		<li><a href="#">合作招商</a></li>
+	                		<li><a href="#">学习中兴</a></li>
+	                		<li><a href="#">商家后台</a></li>
+	                		<li><a href="#">金麦工作室</a></li>
+	                		<li><a href="#">商家帮组</a></li>
+	                		<li><a href="#">规则平台</a></li>
+	                		
+	                		
+                		</ul>
+                	</div><div class="jd_fore_1_3">
+                		<ul>
+	                		<li><a href="#">合作招商</a></li>
+	                		<li><a href="#">学习中兴</a></li>
+	                		<li><a href="#">商家后台</a></li>
+	                		<li><a href="#">金麦工作室</a></li>
+	                		<li><a href="#">商家帮组</a></li>
+	                		<li><a href="#">规则平台</a></li>
+	                		
+	                		
+                		</ul>
+                	</div><div class="jd_fore_1_4">
+                		<ul>
+	                		<li><a href="#">合作招商</a></li>
+	                		<li><a href="#">学习中兴</a></li>
+	                		<li><a href="#">商家后台</a></li>
+	                		<li><a href="#">金麦工作室</a></li>
+	                		<li><a href="#">商家帮组</a></li>
+	                		<li><a href="#">规则平台</a></li>
+	                		
+	                		
+                		</ul>
+                	</div>
+                </div>
+            </li>
+            <span class="line"></span>
+            <li class="jd_five">
+                <span href="#">手机京东</span>
+                <div class="jd_five_1">
+                	<div class="jd_five_1_top">
+                		<img src="../day02/img/2.gif"/>
+                		<p>手机京东</p>
+                		<p class="red">新人转咸大礼包</p>
+                	</div>
+                	<div class="jd_five_1_top">
+                		<img src="../day02/img/2.gif"/>
+                		<p>手机京东</p>
+                		<p class="red">新人转咸大礼包</p>
+                	</div><div class="jd_five_1_top">
+                		<img src="../day02/img/2.gif"/>
+                		<p>手机京东</p>
+                		<p class="red">新人转咸大礼包</p>
+                	</div><div class="jd_five_1_top">
+                		<img src="../day02/img/2.gif"/>
+                		<p>手机京东</p>
+                		<p class="red">新人转咸大礼包</p>
+                	</div><div class="jd_five_1_top1">
+                		<img src="../day02/img/2.gif"/>
+                		<p>手机京东</p>
+                		<p class="red">新人转咸大礼包</p>
+                	</div>
+                </div>
+            </li>
+            <span class="line"></span>
+            <li>
+                <a href="#">网站无障碍</a>
+            </li>
+        </ul>
+    </div>
+	<!--搜索栏-->
+	<div class="jd_soushuo">
+		<div class="naver">
+				<!--logo层-->
+			<div class="jd_soushuo_logo">
+				<a href="#"><img src="imgs/logo.png"/></a>
+				
+			</div>
+			<!--搜索栏-->
+			<div class="jd_soushuo_body">
+				
+				
+			</div>
+			<div class="jd_soushuo_right"></div>
+		</div>
+		
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+	var item = ["faz","foo","baz"]
+	item.forEach(function(index,name,item){
+		console.log(index,name,item)
+	})
+</script>
+</html>
+	</body>
+</html>

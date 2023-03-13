@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 完美视口 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>移动端</title>
+    <style>
+        .outer{
+			width: 200rem;
+			height: 200rem;
+			background-color: #bfa;
+			margin: 200px auto;
+        }
+        /* 
+            像素（px）
+                像素是屏幕上一个个会发光的小点
+                -物理像素
+                    -会发光的小点
+                -css像素
+                    - 编写样式时使用px
+					
+				在pc端，像素和屏墓呈现的效果呈1:1，
+					当我页面放大后，css像素是不会变的
+						而物理像素变成原来的乘积大
+			
+			视口（vi）
+			
+						
+			移动端	
+				- 移动端的项目通常运行在手机上
+					手机屏墓清晰度偏高，（物理像素偏小，清晰度就越高）
+					pc端：1920
+					手机端：1080 
+					
+					手机单个像素远远小于pc端
+					
+				-为了让pc端页面可以在手机在正常显示
+					在pc端页面时，移动端的页面会自动将视口缩小为手机像素
+                    如果pc端在手机上预览>980px，浏览器会对网页进行缩放
+					当时即使这样，网页在移动端浏览器中的体验依然不好
+					
+			device-width
+				设备的自适应
+				
+				
+				
+			适配问题
+				vw
+					对应着视口宽度（参照）
+				%
+					相对包含块的
+        */
+    </style>
+</head>
+<body>
+    <div class="outer">
+		
+    </div>
+</body>
+</html>

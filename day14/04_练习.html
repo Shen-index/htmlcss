@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表的表盘</title>
+		<style>
+			.clock{
+				
+				width: 500px;
+				height: 500px;
+				margin: 100px auto;
+				border-radius: 50%;
+				position: relative;
+				background: url(./img/1200px-Horloĝo_001.png);
+				background-size: contain;
+			}
+			/* 设置秒钟的设置 */
+			.miao{
+				position: absolute;
+				height: 48%;
+				width: 4px;
+				background-color: red;
+				left: 50%;
+				bottom: 50%;
+				margin: 0 auto;
+				/* 设置它移动时，对着低下对齐 */
+				transform-origin: bottom center;
+				animation: run 60s infinite;
+			}
+			/* 设置分针的样式 */
+			.clock-left{
+				position: absolute;
+				left: 0;
+				right: 0;	
+				bottom: 50%;
+				margin: 0 auto;
+				height: 46%;
+				width: 4px;
+				background-color: black;
+				transform: rotateZ(180deg);
+				transform-origin: bottom center;
+           		animation: run 3600s  linear infinite;
+			}
+			/* 设置时钟的样式 */
+			.sac{
+				position: absolute;
+				height: 40%;
+				width: 8px;
+				background-color: black;
+				left: 0;
+				right: 0;
+				bottom: 50%;
+				margin: 0 auto;
+				transform-origin: bottom center;
+				transform: rotateZ(150deg);
+				animation: run 7200s linear infinite;
+				
+			}
+
+			/* 设置关键帧 */
+			@keyframes run{
+				form{
+					transform: rotateZ(0deg);
+				}
+				to{
+					transform: rotateZ(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="clock">
+			<!-- 秒针 -->
+			<div class="miao"></div>
+			<!-- 分眞  -->
+			<div class="clock-left"></div>
+			<!-- 时针 -->
+			<div class="sac"></div>
+		</div>
+	</body>
+</html>

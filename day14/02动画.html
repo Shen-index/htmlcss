@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>动画</title>
+		<style type="text/css">
+			.box{
+				width: 100px;
+				height: 100px;
+				background: red;
+				animation: space 2s 2s steps(2);
+					/*指定时间函数，每一个阶段都会跳两次*/
+			}
+			@keyframes space{
+				from{
+					margin-left: 50px;
+					background: darkgreen;
+				}
+				50%{
+					background: yellow;
+					margin-left: 100px;
+				}
+				to{
+					margin-left: 250px;
+					background: orange;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+	</body>
+</html>

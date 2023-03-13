@@ -1,0 +1,1289 @@
+/* 设置body元素 */
+body{
+    height: 5000px;
+}
+/*设置头部导航条的样式*/
+.nav-top{
+    background: #333;
+    color: #b0b0b0;
+    font-size: 14px;
+}
+/* 整个导航栏的层 */
+.nav-inner{
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    /* 猪肘两边对齐，间隔相等 */
+    justify-content: space-between;
+}
+/* 左侧导航栏层 */
+.link-wrap{
+
+}
+/* 导航栏文字右边的小竖线 */
+.link-wrap .sep{
+        color: #424242;
+         margin: 0 4px;
+}
+
+/* 左侧导航栏a的伪类 */
+.link-wrap a:hover{
+    color: #fff;
+}
+/* 左侧导航栏下载App样式 */
+.link-wrap_1{
+    position: relative;
+}
+/* 左侧导航栏下载App样式(->2) */
+.link-wrap_1 .hide{
+    /* 咱先让内容隐藏先,设置动画起初为0 */
+    position: absolute;
+    /* 内容会溢出，
+    解决一：使用overflow: hidden裁剪溢出的内容
+
+    */
+    height: 0;
+    /* 来个背景颜色白色还有文字颜色，大小 ，边框*/
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+    /* 边框的溢出 */
+    box-shadow: 0 0 6px rgb(0, 0, 0, .3);
+    /* 设置动画 ，高度从0 变到148*/
+    /* 过度，需要用到的属性 多少时间 */
+    transition: height .3s;
+    /* 设置层级 */
+    z-index: 999;
+    /* 调一下下拉内容的位置 */
+    left: 50%;
+    margin-left: -59px;
+}
+
+/* 下载App鼠标移动的下拉二维码 */
+.link-wrap_1:hover .hide{
+    /* 和如上的动画对应，所以给高度，而不是display：black */
+   height: 148px;
+}
+/* 设置img的样式 */
+.link-wrap_1 .hide img{
+    width: 90px;
+    margin-top: 20px;
+}
+/* 设置下拉框的内容层 */
+.link-wrap_1 .hide .link-wrap_2{
+    width: 124px;
+    height: 100%;
+    display: flex;
+    /* 设置内容的位置 */
+    /* 主轴垂直排列 */
+    flex-flow: column;
+    /* 位于 元素中央*/
+    align-items: center;
+    /* 溢出隐藏 */
+    overflow: hidden;
+}
+
+/* 设置鼠标移入的三角形 */
+.link-wrap_1:hover .hide::before{
+
+    /* 隐藏边框 */
+    border: 8px transparent solid;
+    /* 让top的边框不显示 */
+    border-top: none;
+    /* 设置边框颜色 */
+    border-bottom-color: #fff;
+    box-shadow: 0 0 3px rgb(0, 0, 0, .3);
+    /* 设置它的位置 */
+    top: -8px;
+    content: "";
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    /* 开启定位后，居中了，但是元素展开了，因为我们没给宽度和高度
+        1.我们直接设置它的框高即可
+    */
+    position: absolute;
+    width: 0px;
+    height: 0px;
+}
+
+/* 设置右边导航栏的样式 */
+
+/* 设置右边的大哥 */
+.user-info{
+    display: flex;
+    
+}
+
+/* 导航栏文字右边的小竖线 */
+.user-info .sep{
+    color: #424242;
+     margin: 0 4px;
+}
+
+/* 设置a练级诶的伪类 */
+.user-info a:hover{
+    color: #fff;
+}
+/* 设置整个购物车下拉盒子 */
+.cart{
+  position: relative;
+   
+}
+/* 设置购物车的样式 */
+.user-info .right-hide{
+    /* 设置他和左边边距的样式和自身的样式 */
+   
+     /* 咱先让内容隐藏先,设置动画起初为0 */
+     position: absolute;
+     height: 0;
+     /* 来个背景颜色白色还有文字颜色，大小 ，边框*/
+    background: #fff;
+     color: #b0b0b0;
+     font-size: 14px;
+     /* 边框的溢出 */
+     box-shadow: 0 0 6px rgb(0, 0, 0, .3);
+     /* 设置动画 ，高度从0 变到148*/
+     transition: height .3s;
+     /* 设置层级 */
+     z-index: 9999;
+    width: 300px;
+    right: 0;
+
+}   
+
+.user-info .cart .right-hide{
+
+    display: flex;
+    /* 设置内容的位置 */
+    /* 主轴垂直排列 */
+    flex-flow: column;
+    /* 位于 元素中央*/
+    align-items: center;
+    /* 溢出隐藏 */
+    overflow: hidden;
+    
+                   
+   
+}
+
+
+.cart .soan{
+    width: 120px;
+    margin-left: 20px;
+    text-align: center;
+    background-color: #424242;
+}
+.cart .soan:hover{
+    /* 这个地方会出现层级不够，从而导致颜色不执行的原因
+        解决一：使用!important，让他变成重要的，但是不建议使用
+        解决二：用祖先选择器，让他优先级变高
+    */
+    color: #ff6700 ;
+    background-color: #fff;
+}
+/* 设置下拉框的内容层 */
+.cart .right-hide .right-hide-xiala{
+    width: 214px;
+    height: 300px;
+    line-height: 100px;
+}
+
+
+/* 设置购物车鼠标移入的样式 */
+.cart:hover .right-hide{
+   height: 100px;
+}
+
+
+
+
+/*头部的菜单*/
+.top-header{
+	position: relative;
+	/*设置下边框的线*/
+	border-bottom: 1px solid rgba(105,101,101,.6);
+}
+/* logo位置大盒子 */
+.top-header .w{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+/* 设置链接的图片灯 */
+.top-header .logo a{
+    display: block;
+    width: 56px;
+    height: 56px;
+    margin-right: 20px;
+    font-size: 0;
+    background-image: url("../img/logo.png");
+    background-size: cover;
+    /* 按住缩小会变形，所以不让它延伸 */
+    background-repeat: no-repeat;
+    background-position: center;
+    /*设置层级*/
+ 
+}
+/* 设置logo按住会缩小 */
+.top-header .logo a:active{
+    background-size: 50px;
+}
+/*设置中间的菜单*/
+.top-header .menu{
+	
+    display: flex;
+    font-size: 16px;
+}
+.top-header .menu li > a{
+    display: block;
+    height: 100px;
+    line-height: 100px;
+    padding: 0 15px;
+}
+.top-header .menu li > a:hover{
+    color: #ff6700;
+}
+
+.top-header a.category{
+    padding-left: 40px;
+    margin-right: 35px;
+    visibility: hidden;
+}
+
+/* 左侧导航栏下载App样式 */
+.menu{
+    
+    margin-left: 100px;
+}
+
+
+
+
+
+
+/* 中间导航栏样式(->2) */
+.center .center-1{
+    /* 咱先让内容隐藏先,设置动画起初为0 */
+    position: absolute;
+    
+    height: 0;
+  
+  
+    /* 来个背景颜色白色还有文字颜色，大小 ，边框*/
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+    /* 边框的溢出 */
+    box-shadow: 0 0 6px rgb(0, 0, 0, .6);
+    /* 设置动画 ，高度从0 变到148*/
+    transition: height .3s;
+    /* 设置层级 */
+    z-index: 9999;
+    /* 调一下下拉内容的位置 */
+ 	left: 0;
+}
+
+/*鼠标移动的下拉 */
+.center:hover .center-1{
+    /* 和如上的动画对应，所以给高度，而不是display：black */
+   height: 200px;
+   width: 1226px;
+}
+
+/* 设置下拉框的内容层 */
+.center .center-1 .center-2{
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* 设置内容的位置 */
+    /* 主轴垂直排列 */
+   
+    /* 位于 元素中央*/
+   align-items: center;
+    /* 溢出隐藏 */
+    overflow: hidden;
+
+}
+/*设置下拉内容的样式*/
+.menu img{
+	width: 160px;
+	height: 110px;
+	
+}
+/*设置内容盒子*/
+.menu .box1{
+	padding: 0 40px;
+	border-right: 1px solid rgba(105,101,101,.2);
+   
+    text-align: center;
+  
+	
+}
+.box1 .orght{
+    color: #ff6700;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*设置搜索栏的层*/
+.search-form{
+    
+	display: flex;
+	flex: auto;
+	justify-content: end;
+}
+
+/*设置搜索栏的样式*/
+.search-form input{
+	box-sizing: border-box;
+	width: 244px;
+	height: 50px;
+	 border: 1px solid #e0e0e0;
+	 /*设置鼠标移入的伪类*/
+	    outline: none;
+    padding: 0 6px;
+    font-size: 16px;
+}
+
+/*focus 鼠标单击后的样式*/
+.search-form input:focus,
+.search-form input:focus + button{
+    border-color:#ff6700 ;
+}
+
+/*设置按钮的样式*/
+.search-form button{
+	box-sizing: border-box;
+	/*这里的按钮会让input往右手边走，所以会出现input和下拉框不对齐的元婴*/
+	width: 48px;
+	border: 1px solid #e0e0e0;
+	background: #fff;
+	font-size: 18px;
+	border-left: none ;
+}
+
+/*按钮下拉内容*/
+.search-form{
+	position: relative;
+}
+/*下拉的内容样式*/
+.search-form .hide{
+	position: absolute;
+	display: none;
+	background: #fff;
+	width: 242px;
+	height:  300px;
+	top: 50px;
+	right: 48px;
+	font-size: 16px;
+	border: 1px solid #ff6700;
+    border-top: none;
+    /*这里不设计层级会让下面的banner层覆盖
+     解决一：设置层级
+     * */
+	z-index: 9999;
+}
+/*设置a的样式*/
+.search-form .hide a{
+	box-sizing: border-box;
+	display: inline-block;
+	width: 242px;
+	height: 50px;
+	
+	padding: 0 6px;
+	border-bottom: 1px solid rgba(105,101,101,.2);
+	display: flex;
+  
+    align-items: center;
+    flex: auto;
+}
+/*
+.search-form .hide{
+    display: none;
+    position: absolute;
+    box-sizing: border-box;
+    width: 245px;
+    height: 300px;
+    background-color: #fff;
+    top:50px;
+    right: 49px;
+    border: 1px solid #ff6700;
+    border-top: none;
+}*/
+/*设置鼠标单击后的样式*/
+.search-form input:focus ~ .hide{
+    display: block;
+}
+
+.search-form .form-xiala a:hover{
+	background: #B0B0B0;
+	
+}
+/*身体部分开始*/
+.banner{
+	position: relative;
+}
+/*身体部分的左手边*/
+
+.banner-left{
+    /* 为了让接下来的内容移上来 */
+    position: absolute;
+	display: flex;
+	flex-flow: column;
+	background: rgba(105,101,101,.5);
+	width: 234px;
+    height: 440px;
+    color: white;
+    padding: 10px 0;
+    /* 设置层级，不然banner中间的轮播图会覆盖这边 */
+    z-index: 999;
+}
+
+/* 设置鼠标移入的内容 */
+.left{
+    position: relative;
+
+}
+.left .left-body{
+    position: absolute;
+    display: none;
+    right: 0;
+    background-color: #fff;
+    z-index: 9999;
+}
+.left :hover .left-body{
+    display: block;
+}
+
+/*设置a的样式*/
+.banner-left a{
+	height: 40px;
+	 padding: 0 30px;
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: auto;
+    
+}
+/*设置移入的样式*/
+.banner-left a:hover{
+	background-color: #ff6700;
+}
+
+/*样式里面的三角符号*/
+
+.banner-left a::after{
+	  content: "\f105";
+	  font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+/* 轮播图的层 */
+.banner-body{
+    /* 这个地方，因为我是用了，banner是单独一层，所以，右边的样式得开定位 */
+    height: 460px;
+    position: relative;
+}
+/* 每个图片 */
+.banner .img-list li{
+    position: absolute;
+}
+
+/* 设置翻页 */
+/*设置按钮的层*/
+.banner .prev a{
+	position: absolute;
+	width: 41px;
+	height: 69px;
+	background: url(../img/icon-slides.png);
+	top: 0;
+	bottom: 0;
+	margin: auto 0;
+	
+}
+/*设置左边的按钮*/
+.banner .prev .prev-left{
+	left: 234px;
+	background-position: -84px 0;
+}
+/*设置右边的按钮img*/
+.banner .prev .prev-right{
+	right: 0;
+	background-position: -125px 0;
+}
+/*设置左边雪碧图鼠标移动的伪类*/
+.prev .prev-left:hover{
+	background: url(../img/icon-slides.png);
+	background-position: 0px 0;
+}
+/*设置右边雪碧图鼠标移动的伪类*/
+.prev .prev-right:hover{
+	background: url(../img/icon-slides.png);
+	background-position: 125px 0;
+}
+
+/*banenr层里头的小点哈*/
+.dian{
+	position: absolute;
+	bottom: 20px;
+	right: 30px;
+	display: flex;
+}
+/*设置a的圆哈*/
+.dian a{
+	width: 10px;
+	height: 10px;
+	border: 2px hsla(0,0%,100%,.3) solid;
+	border-radius: 50%;
+	margin: 0 5px;
+	background: rgba(0,0,0,.4);
+}
+/*设置鼠标移动的伪类*/
+.dian a:hover{
+	border-color: rgba(0,0,0,.4);
+	background: #fff;
+
+	
+}
+/*设置第一个的样式*/
+.dian a:first-child{
+	background: #fff;
+	border-color: rgba(0,0,0,.4);
+}
+
+/*设置banner层的bottom*/
+.banner-bottom{
+	display: flex;
+	justify-content: space-between;
+	height: 170px;
+	margin-top: 14px;
+	margin-bottom: 30px;
+}
+/*设置banner的ul*/
+.banner-bottom .bottom-left ul{
+	width: 234px;
+	height: 170px;
+	background: #5f5750;
+	display: flex;
+	flex-flow: wrap;
+	
+	box-sizing: border-box;
+	padding: 3px;
+	color: #fff;
+}
+/*设置每个盒子的大小*/
+.banner-bottom .bottom-left li{
+	position: relative;
+	width: 76px;
+	height: 82px;
+}	
+/*设置图形左边的边框*/
+.banner-bottom .bottom-left li::before{
+	 content: "";
+    position: absolute;
+    width: 1px;
+    height: 70px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    background-color: #665e57;
+}
+/*bottom的边框*/
+.banner-bottom .bottom-left li::after{
+	 content: "";
+    position: absolute;
+    height: 1px;
+    width: 64px;
+    background-color: #665e57;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0 auto;
+}
+/*设置每个文字*/
+.banner-bottom .bottom-left li a{
+	display: flex;
+    height: 100%;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    
+   opacity: .7;
+    transition: opacity .5s;
+
+}
+.banner-bottom .bottom-left li i{
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+/*鼠标移动后的效果*/
+.banner-bottom .bottom-left li a:hover{
+	opacity: 1;
+}
+
+/*banner-bottom的中间层*/
+.bottom-body{
+	
+}
+/*设置盒子样式*/
+.bottom-body{
+	
+	width: 316px;
+	 transition: box-shadow .5s;
+}
+/*鼠标移动盒子后的效果*/
+.bottom-body:hover{
+	box-shadow: 0 14px 30px rgba(0,0,0,.1);
+}
+
+/*设置side-bar的样式*/
+.side-bar{
+    position: fixed;
+    width: 80px;
+    height: 500px;
+    top: 320px;
+    left: 50%;
+    margin-left: 613px;
+}
+
+/* 上半部分结束 */
+
+
+
+
+
+
+
+
+
+
+
+
+/* 下半部分开始 */
+
+
+/*footer层*/
+.phone{
+	
+}
+/*大图片*/
+.phone-top{
+	margin-top: 20px;
+	
+}
+/*手机的样式*/
+.phone .phone-1{
+    margin: 20px 0;
+	display: flex;
+	justify-content: space-between;
+}
+.phone .nav:hover{
+    color: orange;
+    border-color: orange;
+}
+/*字体样式*/
+.phone .phone-1 h2{
+	font-size: 22px;
+	font-weight: bold;
+}
+/*字体样式*/
+.phone .phone-1 a{
+	font-size: 16px;
+}
+/*字体样式*/
+.phone .phone-1 a:hover{
+	color: #ff6700;
+}
+/*图标样式*/
+.phone .phone-1 i{
+	
+	
+}
+/* 给整个层开启flex */
+.top{
+    display: flex;
+    margin-top: 20px;
+     height: 614px;
+     
+}
+/* 这里如果并开启自动换行，那么下面的元素就不会再上来 */
+.top-left{
+    display: flex;
+    flex-wrap: wrap;
+    transition:  300ms;
+
+}
+.top-left:hover{
+    margin-top: -2px;
+    box-shadow: 0px 0 20px rgb(0, 0, 0,.1);
+}
+
+/* 设置手机左边大图 */
+.top-left img{
+	width: 234px;
+    margin-top: 10px;
+}
+/* 右边的层 */
+.phone .top-rigth{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    height: 614px;
+}
+/* 右边img样式 */
+.phone .top-rigth img{
+	width: 160px;
+	height: 160px;
+   
+}
+
+.top-rigth .box-1{
+    margin-top: 10px;
+}
+/* 设置box1 */
+.top-rigth .box-1 li{
+    width: 234px;
+    height: 300px;
+    background: #fff;
+
+    display: block;
+    margin: 0 0 0 14px;
+    transition:  .3s;
+   
+   
+}
+.top-rigth .box-1 a{
+    display: block;
+    padding: 20px 0;
+    box-sizing: border-box;
+    height: 100%;
+    text-align: center;
+}
+.top-rigth .box-1 li{
+    margin: 0 0 0 14px;
+    text-align: center;
+}
+/* 设置盒子文字上面的样式 */
+.top-rigth .box-1 h3{
+    margin: 0 10px 2px;
+    text-align: center;
+}
+
+/* 设置盒子中间的样式 */
+.box-1 .over{
+    margin: 0 10px 10px;
+    color: #b0b0b0;
+    
+}
+/* 设置盒子下面的样式 */
+.box-1 .orger{
+    margin: 0 10px 14px;
+    color: #ff6700;
+    
+}
+  
+
+
+.top-rigth .box-1 li:hover{
+    margin-top: -2px;
+    box-shadow: 0px 0 20px rgb(0, 0, 0,.1);
+   box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+/* 手环 */
+.Watch{
+	
+}
+/*大图片*/
+.Watch .phone-top img{
+	margin: 15px 0;
+	
+}
+/*手机的样式*/
+.Watch .phone-1{
+    margin: 20px 0;
+	display: flex;
+	justify-content: space-between;
+}
+.Watch .nav:hover{
+    color: orange;
+    border-color: orange;
+}
+/*字体样式*/
+.Watch .phone-1 h2{
+	font-size: 22px;
+	font-weight: bold;
+}
+/*字体样式*/
+.Watch .phone-1 a{
+    margin: 0 10px;
+	font-size: 16px;
+    
+   
+}
+.Watch .phone-1 .box2-1{
+    border-bottom: 2px solid #ff6700;
+}
+/*字体样式*/
+.Watch .phone-1 a:hover{
+ 
+	color: #ff6700;
+    border-bottom: 2px solid #ff6700;
+}
+
+/*图标样式*/
+.Watch .phone-1 i{
+	width: 10px;
+	height: 10px;
+	padding: 5px;
+	background: #b0b0b0;
+	border-radius: 25px;
+	margin-left: 8px;
+	color: #fff;
+	
+}
+/* 右边的层 */
+.Watch .top-rigth{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    height: 614px;
+}
+/* 右边img样式 */
+.Watch .top-rigth img{
+	width: 160px;
+	height: 160px;
+   
+}
+.item{
+    margin-top: 10px;
+}
+.item .box-2{
+    width: 234px;
+    height: 143px;
+    display: flex;
+    flex-wrap:wrap;
+    background: #fff;
+    margin: 0px 0px 14px 14px;
+    padding: 20px 0;
+    box-sizing: border-box;
+    transition: 0.2s;
+    margin-top: 0;
+    display: block
+}
+.item .box-2:hover{
+    margin-top: -2px;
+    box-shadow: 0px 0 20px rgb(0, 0, 0,.1);
+    
+}
+.item .box-2 img{
+   float: right;
+    width: 80px;
+    height: 80px;
+}
+.item .over{
+	font-size:22px;
+}
+
+
+
+
+
+
+
+/*it盒子的样式*/
+.it{
+
+}
+/* 咱先设置上面这个文字样式 */
+.it .it-1{
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+.it .it-1 h2{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.it .it-1 .box2 a{
+    color: #ff6700;
+    border-bottom: 2px solid #ff6700;
+    font-size: 16px;
+    padding: 5px 0;
+}
+/* 文字样式结束 */
+
+/* 主体样式开始 */
+/* 设置主题大盒子 */
+/* .it .it-right{ */
+    /* display: grid; */
+    /* 设置五列 */
+    /* grid-template-columns: repeat(5,1fr); */
+    /* 设置每列的宽度 */
+    /* grid-template-rows: 234px 234px 234px 234px 234px; */
+
+    /* 设置他们的间距 */
+    /* grid-gap: 20px; */
+
+/* } */
+/* 设置每个盒子的样式 */
+.phone-2{
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.phone-2 h2{
+  
+    font-size: 22px;
+    font-weight: bold;
+}
+.phone-2 .box2 a{
+    color: #ff6700;
+    border-bottom: 2px solid #ff6700;
+    padding: 5px 0;
+}
+
+/* it样式结束 */
+
+
+
+
+/* 家电样式开始 */
+.jiadian{
+	
+}
+/* 设置家电top字体的样式 */
+.jiadian .jiadian-1{
+	margin-top: 20px;
+	line-height: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: space-between;
+}
+.jiadian .jiadian-1 h2{
+	font-size: 22px;
+	font-weight: bold;	
+}
+.jiadian .jiadian-1 a{
+	font-size: 16px;
+	padding: 5px;
+}
+.jiadian .jiadian-1 a:hover{
+	color: #ff6700;
+	border-bottom: 2px solid #ff6700;
+}
+.jiadian .jiadian-1 .jiadian-left{
+	color: #ff6700;
+	border-bottom: 2px solid #ff6700;
+	margin-right: 10px;
+	
+}
+
+
+/* 设置banner中间的层 */
+.banner-box{
+	display: flex;
+}
+.banner-box .box-1{
+	display: flex;
+	flex-wrap: wrap;
+	
+	transition: all .3s;
+}
+.banner-box .box-1 a{
+	margin: 10px 0px 0 0;
+	display: block;
+	width: 234px;
+	height: 300px;
+	background: #fff;
+	transition: all .3s;
+	text-align: center;
+}
+.banner-box .box-1 img{
+	width: 234px;
+	height: 300px;
+}
+.banner-box .box-1 a:hover{
+	margin-top: 2px;
+	box-shadow: 0 0 20px rgb(0, 0, 0,.1);
+}
+
+.banner-box .box a > img{
+	width: 160px;
+	
+}
+.banner-box .box .qian{
+	font-size: 14px;
+	color: #B0B0B0;
+	margin: 10px;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	    overflow: hidden;
+}
+.banner-box .box span{
+	
+	color: #ff6700;
+}
+.banner-box .box del{
+		color: #B0B0B0;
+		margin-left: 10px;
+}
+.banner-box .box{
+	display: flex;
+	align-items: center;
+	flex-flow: column;
+	flex-wrap: wrap;
+	display: block;
+	margin-left: 15px;
+    
+}
+.banner-box .box a{
+	margin: 10px 0  0 0px;
+	display: block;
+	width: 234px;
+	height: 300px;
+	background: #fff;
+	transition: all .3s;
+	text-align: center;
+	box-sizing: border-box;
+}
+.banner-box .box a:hover{
+	margin-top: 2px;
+	box-shadow: 0 0 20px rgb(0, 0, 0,.1);
+}
+.banner-box .box-2{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    width: 234px;
+    height: 143px;
+    background-color: #fff;
+    text-align: center;
+}
+.banner-box .box-2 img
+{
+	width: 80px;
+	float: right;
+
+}
+
+.banner-box .item span{
+    color: #ff6700;
+}
+.box-2 .qian1{
+    font-size: 22px;
+}
+/* 这里如果并开启自动换行，那么下面的元素就不会再上来 */
+.top-left-1{
+    display: flex;
+    flex-wrap: wrap;
+    transition:  600ms;
+
+}
+.top-left-1 .move{
+    
+    margin-top: 10px;
+}
+.top-left-1 .move{
+    display: flex;
+    flex-wrap: wrap;
+    transition:  600ms;
+}
+.top-left-1 .move li:hover{
+    margin-top: 2px;
+    box-sizing: border-box;
+    box-shadow: 0 0 20px rgb(0, 0, 0,.1);
+}
+.footer-move img{
+	margin: 50px 0;
+}
+
+
+/* 尾部 */
+/* 设置尾部盗汗懒得样式 */
+.footer{
+	height: 500px;
+}
+.footer .footer-top{
+	display: flex;
+	height: 80px;
+	line-height: 80px;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	border-bottom: 1px solid #e0e0e0;
+}
+.footer .footer-top .footer-top-1{
+	width: 234px;
+}
+.footer .footer-top a{
+	color: #616161;
+	font-size: 16px;
+	
+}
+.footer .footer-top a:hover{
+	color: #ff6700;
+}
+.footer .footer-top .item-xian{
+	height: 20px;
+	border-left: 2px solid  #e0e0e0;
+	width: 2px;
+	content: "";
+}
+.footer .footer-body{
+	display: flex;
+	margin-top: 50px;
+}
+.footer-body .box1 h3{
+	width: 160px;
+	color: #424242;
+	text-align: left;
+}
+.footer-body .box1 .box1-1,
+.footer-body .box2 .box1-1,
+.footer-body .box3 .box1-1,
+.footer-body .box4 .box1-1,
+.footer-body .box5 .box1-1
+{
+	margin-top: 27px;
+}
+.footer-body .box1 span,
+.footer-body .box2 span,
+.footer-body .box3 span,
+.footer-body .box4 span,
+.footer-body .box5 span{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 160px;
+	line-height: 30px;
+	font-size: 12px;
+	color: #757575;
+	text-align: center;
+}
+.footer-body .box1 a:hover,
+.footer-body .box2 a:hover,
+.footer-body .box3 a:hover,
+.footer-body .box4 a:hover,
+.footer-body .box5 a:hover{
+	color: #ff6700;
+}
+.footer-body .box5{
+	height:100px;
+	border-right: 1px solid #e0e0e0;
+}
+.footer-body .box6{
+	width: 243px;
+	text-align: center;
+}
+.footer-body .box6 .red{
+	color: #ff6700;
+	font-size: 22px;
+}
+
+.footer-body .box6 .box7{
+	color: #ff6700;
+	width: 120px;
+	height: 30px;
+	border: 1px solid #ff6700;
+    display: inline-block;
+    line-height: 30px;
+}
+.footer-body .box6 .box7 i{
+    content: "";
+}
+.footer-body .box6 .box7:hover{
+    color: #fff;
+    background-color: #ff6700;
+}
+
+
+/* footer最后一层 */
+.faz{
+    display: flex;
+}
+.faz .img-1{
+    width: 56px;
+    height: 130px;
+    margin: 20px 20px 0 0;
+}
+
+
+.faz .faz-top{
+    margin-top: 30px;
+}
+.faz .faz-top a{
+    color: #757575;
+}
+.faz .faz-top a:hover{
+    color: #ff6700;
+}
+.faz .faz-top .c{
+    color: #B0B0B0;
+    padding: 0 2px;
+}
+.faz .faz-top p,
+.faz .faz-top p > a{
+    color: #b0b0b0;
+}
+
+.faz .item-1 img{
+    width: 83.01px;
+    height: 28px;
+}
+.faz .item-2 img{
+    width: 85px;
+    height: 28px;
+}
+.faz .item-3 img{
+    width: 91.84px;
+    height: 28px;
+}
+.faz .item-4 img{
+    width: 73.91px;
+    height: 28px;
+}
+
+.side-bar .bar-box1{
+    font-size: 16px;
+    color: #b0b0b0;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    border: 1px solid #e0e0e0;
+}
+.side-bar .bar-box1 i{
+    margin-top: 10px;
+    font-size: 24px;
+}
+.side-bar .bar-box1:hover{
+    color: #ff6700;
+}
+
+.top-rigth .item i{
+    font-size: 50px;
+    color: #ff6700;
+    float: right;
+    margin: 10px 10px;
+}
+.Watch .box2 a{
+    padding: 5px 0;
+}
+.Watch .box2-1{
+    padding: 5px 0;
+}

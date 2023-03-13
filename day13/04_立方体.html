@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>立方体</title>
+		<style>
+			body{
+				perspective: 800px;
+			}
+			ul{
+				list-style: none;
+			}
+			.move{
+				width: 300px;
+				height: 300px;
+				margin: 100px auto;
+				position: relative;
+				transform: rotateY(140deg);
+				/* 开启3D效果 */
+				transform-style: preserve-3d;
+				transition:  all 20s;
+			}
+			.move:hover{
+				transform: rotateX(2turn) rotateY(2turn) rotateZ(2turn);
+			}
+			.move li{
+				font-size: 80px;
+				text-align: center;
+				font-weight: bold;
+				color: white;
+				line-height: 300px;
+				/* 设置咱的透明读  */
+				
+				/* 实现盒子叠一起 */
+				position: absolute;
+				width: 300px;
+				height: 300px;
+				
+			}
+			.move li:nth-child(1){
+				transform:  translateZ(150px);
+
+			background: url(../img/微信图片_20211109191009.jpg);
+			background-repeat: no-repeat;
+				background-size: cover;
+			}
+			.move li:nth-child(2){
+				transform: rotateX(90deg) translateZ(150px);
+			background: url(../img/微信图片_20211109191007.jpg);
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+			.move li:nth-child(3){
+				transform: rotateX(-90deg) translateZ(150px);
+			background: url(../img/微信图片_20211109191011.jpg);
+			background-repeat: no-repeat;
+				background-size: cover;
+				
+			}
+			.move li:nth-child(4){
+				transform: rotateY(90deg) translateZ(150px);
+				background: url(../img/微信图片_20220225213109.jpg);
+			background-repeat: no-repeat;
+				background-size: cover;
+				
+				
+			}
+			.move li:nth-child(5){
+				transform: rotateY(-90deg) translateZ(150px) ;
+
+	background: url(../img/微信图片_20220225213332.jpg);
+			background-repeat: no-repeat;
+				background-size: cover;
+			}
+			.move li:nth-child(6){
+				transform: translateZ(-150px);
+
+				background: url(../img/微信图片_20211115221825.jpg);
+			background-repeat: no-repeat;
+				background-size: cover;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="move">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</body>
+</html>

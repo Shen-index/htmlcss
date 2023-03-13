@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>弹性盒</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			/*
+			 主轴
+			 	- 主轴就是弹性子元素 排列方向;
+			 	- 如何设置主轴方向
+			 		flex-direction
+			 			可选值：
+			 				row：主轴自左向右的水平排列
+			 				column：主轴是自上而下的排列方向
+			 				row-reverse：株洲市自右向左水平方向
+			 				column-reverse :主轴是自下而上的垂直排列
+				 	
+				 	
+				 	- 设置元素是否换行
+				 		flew-wrap
+				 			可选值
+				 				nowrap:元素不会自动换行
+				 				wrap：自动换行
+				 				wrap-reverse:反向换行
+				 				
+				 		*flew-flow:
+				 			flew-wrap和flew-direction的结合
+				 			不分前后顺序
+				 	
+				 	-测轴（辅轴）
+				 	
+				 		- 测轴是主轴垂直方向的轴;
+			*/
+			ul{
+				display: flex;
+				width: 400px;
+				height: 300px;
+				border: 10px solid red;
+				/*flex-direction: row;
+				flex-wrap: wrap;*/
+				flex-flow: wrap row;
+				/*justify-content: space-evenly;*/
+				align-items: stretch;
+				
+				/*
+				 	justify-content 设置元素在主轴上的对齐方式
+				 		可选值
+				 			start：默认值，元素从主轴起始位置对其
+				 			end：元素从主轴的结束对齐
+				 			center:延主轴方向居中对齐
+				 			space—between：将空白位置分配到两个元素之间（平分）
+				 			space-around:将空白位置分配到每个元素周围
+				  						- 两边距离窄，中间区域宽;
+				  			space-evenly：将空白位置分配到元素的一侧(均匀)
+				 	align-items:设置元素的测轴的起始位置对齐
+				 		start 默认值，元素靠测轴的起始位置对齐
+						end 元素靠测轴的结束位置对齐
+						stretch 拉伸，元素会自动拉伸将测轴盛满
+						center 元素在测轴上居中对齐
+						
+					align-content 设置元素在测轴上空白空间的分配
+						
+				 * */
+			}
+			li{
+				list-style: none;
+				float: left;
+				width: 200px;
+				
+				line-height: 100px;
+				text-align: center;
+				color: #FFFF00;
+				font-size: 50px;
+				
+				flex-basis: auto;
+				
+			}
+			li:nth-child(1){
+				background: #0000FF;
+				flex-shrink: 2;
+			}
+			li:nth-child(2){
+				background: darkgoldenrod;
+			}
+			li:nth-child(3){
+				background: green;
+			}
+			li:nth-child(4){
+				background: red;
+			}
+			li:nth-child(5){
+				background: coral;
+				flex-shrink: 1;
+			}
+			li:nth-child(6){
+				background:blanchedalmond;
+				width: 300px;
+				flex-shrink: 1;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+	</body>
+</html>

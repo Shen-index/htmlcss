@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul{
+				list-style: none;
+			}
+			ul{
+				width: 800px;
+				height: 599px;
+				display: flex;
+				border: 10px solid red;
+				align-items: stretch;
+				text-align: center;
+			}
+			li{
+				width: 100px;
+				
+				font-size: 40px;
+				line-height: 40px;
+				color: #fff;
+				
+				background-color: #00BFFF;
+			}
+			/*
+			 anlign-self
+			 	弹性子元素的样式
+			 	用来单独设置某个弹性子元素的对齐方式
+			 	
+			 order
+			 	-用来指定;
+			 * */
+			li:nth-child(1){
+				order: 1;
+			}
+			li:nth-child(2){
+				order: 4;
+			}
+			li:nth-child(3){
+				order: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+.box1{
+    min-width: 1190px;
+    height: 260px;
+    border: 1px solid #ccc;
+   
+}
+.item1{
+    width: 500px;
+    float: left;
+    margin: 0 auto;
+        border: 1px solid #E3E4E5;
+
+}
+.item1_top h1{
+    float: left;
+    font-weight: bold;
+}
+.item1_top a{
+    font-size: 16px;
+    float: right;
+    color: red;
+    padding: 5px 0;
+    border-bottom: 2px solid red;
+}
+.item1_left{
+    float: left;
+    width: 160px;
+    height: 310px;
+    
+    background-color: #eee;
+}
+.item1_left p{
+    background-image: url(//day08/imgs/4.jpg);
+}
+
+
+
+
+
+
+.item2{
+    clear: both;
+    width: 500px;
+    height: 300px;
+    float: right;
+}
+.banner{
+	height: 150px;
+}

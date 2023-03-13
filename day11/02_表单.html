@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+</head>
+<body>
+
+<form action="../day10/target.html">
+
+
+    <div>
+<!--
+    placeholder
+        - 用来设置文本框的占位符
+    value
+        - 文本框中可以通过value来指定默认值
+    disabled
+        - 禁用表单项，不会被提交
+    readonly
+        - 表单项无法修改，但是可以提交
+    checked
+        - 设置默认选中的单选和多选
+    selected
+        - 设置默认选中的下拉项
+-->
+        <label for="username">用户名：</label>
+         <input id="username" type="text" name="username" placeholder="请输入用户名" value="admin" >
+    </div>
+
+    <div>
+        <!--
+
+
+        -->
+        <!--        密码 <input type="password" name="password">-->
+    </div>
+
+    <div>
+        <!--
+
+        -->
+        性别：
+        <input type="radio" name="gender" value="male" id="male" > <label for="male">男</label>
+        <input type="radio" name="gender" value="female" checked id="female">  <label for="female">女</label>
+    </div>
+
+    <div>
+        <!--
+
+        -->
+        爱好：
+        <input type="checkbox" name="hobby" value="ppq" checked> 乒乓球
+        <input type="checkbox" name="hobby" value="lq"> 篮球
+        <input type="checkbox" name="hobby" value="ymq" checked> 羽毛球
+        <input type="checkbox" name="hobby" value="zq"> 足球
+
+    </div>
+
+    <div>
+        <!--
+
+        -->
+        你最喜欢的编程语言：
+        <select name="language" >
+            <option value="js">JavaScript</option>
+            <option selected>Java</option>
+            <option>Python</option>
+        </select>
+
+    </div>
+
+    <div>
+        <input type="submit" value="登录">
+<!--        重置按钮 重置表单-->
+        <input type="reset">
+
+<!--        普通按钮，只能被点，但是我们可以通过JS来为其添加功能-->
+        <input type="button" value="按钮">
+    </div>
+    
+    <div>
+        <textarea name="text" id="" cols="30" rows="10"></textarea>
+    </div>
+
+    <div>
+        <button type="submit">提交</button>
+        <button type="reset">重置</button>
+        <button type="button">按钮</button>
+        <button type="button"><img src="../图片/jpg/an.jpg" alt=""></button>
+    </div>
+
+</form>
+
+
+</body>
+</html>

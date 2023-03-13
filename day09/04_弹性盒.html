@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>弹性盒</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				display: flex;
+			}
+			/*
+			 	弹性项目
+			 		auto，initial，none，等同于1 0 1 auto
+			 		
+			 		flex-grow
+			 			相对于规定的元素的增长量
+			 					
+			 		flex-shrink
+			 			指定元素的收缩量
+			 			根据原先长度的收缩量
+			 		flex-basis
+			 			制定元素的增长量
+			  
+			 */
+			li{
+				list-style: none;
+				
+				width: 200px;
+				
+				line-height: 100px;
+				text-align: center;
+				color: #FFFF00;
+				font-size: 50px;
+				
+				
+			}
+			li:nth-child(1){
+				background: #0000FF;
+				flex-shrink: 1;
+			}
+			li:nth-child(2){
+				background: darkgoldenrod;
+				flex-shrink: 2;
+			}
+			li:nth-child(3){
+				background: green;
+				flex-grow: 3;
+			}
+			li:nth-child(4){
+				background: red;
+			}
+			li:nth-child(5){
+				background: coral;
+			}
+			li:nth-child(6){
+				background:blanchedalmond;
+				flex-basis: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+	</body>
+</html>

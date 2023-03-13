@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+    <style>
+        body{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: 100px 100px 100px 100px;
+				border: 10px solid #333;
+               grid-gap: 10px;
+        }
+        .box1{
+            background-color: antiquewhite;
+            grid-column-start: 1;
+            grid-column-end: -1;
+            width: 100%;
+            height: 100px;
+            grid-gap: 1/2;
+        }
+        /* 可以通过z-index来调整网格线的层级 */
+        /* 
+            grid-columns： 同时设置列开始和结束
+            grid-row :同时设置行开始和结束
+            grid-area：同时设置行和列的开始和结束
+            grid-column-gap 列间距
+            grid-row-gap:行间距
+            grid-gap 同时设置行间距和列间距
+
+            快捷方式
+                grid-columns: 1/2
+                相当于 一个start 和 end
+                        第一个时开始值
+                        第二个是结束值
+
+                grid-row:1/2
+                    相当于 一个start 和 end
+                        第一个时开始值
+                        第二个是结束值
+
+                grid-area: grid-row-start/grid-column-start/grid-column-end/ grid-row-end
+                    grid: area 1px / 2px / 3px / 2px;
+                    行开始/列开始/列结束/航结束
+
+
+        */
+        .box2{
+            
+            grid-row-start: 2;
+            grid-row-end: 4;
+            background-color: rgb(130, 86, 27);
+        }
+        .box3{
+            
+            grid-column-start: 2;
+            grid-column-end: -1;
+           
+            background-color: rgb(64, 39, 5);
+        }
+        .box4{
+          
+            background-color: rgb(17, 91, 114);
+        }
+        .box5{
+           
+            background-color: rgb(87, 181, 60);
+        }
+        .box6{
+           
+            background-color: rgb(149, 13, 120);
+        }
+        .box7{
+            grid-column: 1/-1;
+            background-color: rgb(40, 158, 222);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">导航栏</div>
+    <div class="box2">菜单</div>
+    <div class="box3">banner</div>
+    <div class="box4">照片</div>
+    <div class="box5">照片</div>
+    <div class="box6">照片</div>
+    <div class="box7">footer</div>
+</body>
+</html>

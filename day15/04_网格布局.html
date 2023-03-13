@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>网格布局</title>
+		<style type="text/css">
+		.outer{
+			
+			display: grid;
+			border: 4px solid red;
+			grid-gap: 10px;
+			
+			/* grid-auto-flow 网格项的排列方式
+				-可选值
+					row默认值 优先填充行，行满了会自动创建新行
+					column 优先填充列，列满了会自动换到下一列
+					dense：紧凑的，只要容器有位置，后面的元素就会自动补位
+				grid-auto-rows
+					指定自动行的大小
+			
+			 */
+			grid-auto-columns: 50px;
+			grid-auto-flow: dense;
+			grid-auto-rows: 100px 100px 200px;
+			grid-template-columns: repeat(4, 1fr);
+		
+		}
+		.outer div{
+			border: 4px red solid;
+			}
+		.box1{
+			grid-row: 1/4;
+		}
+		.box2{
+			grid-column: 4/2;
+		}
+		.box3{
+			grid-row: 2/4;
+		}
+		.box5{
+			grid-column: 1/2;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="outer">
+			<div class="box1">box1</div>
+			<div class="box2">box2</div>
+			<div class="box3">box3</div>
+			<div class="box4">box4</div>
+			<div class="box5">box5</div>
+		</div>
+	</body>
+</html>

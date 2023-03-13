@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>小按钮</title>
+		
+		<style type="text/css">
+			/*
+			 	- 当第一次访问后，鼠标单击会出现闪
+			 	 - 浏览器运行会加载图片（懒缓存/时间差）;
+			 		
+			 
+			 	通过css-sprite解决
+			 		-将多个小的图片放到一个大图片（雪碧图）中
+			 		然后通过position来偏移量
+			 		- 减少客户端发送请求
+			 			雪碧图
+			 				1.雪碧图是位图，图片放大会失真
+			 				2.雪碧图无法修改颜色
+			 				3.支持彩色图标
+			 			图标字体
+			 				1.图标字体时重量图，可以任意放大或缩小
+			 				2.图标字体可以任意更改颜色
+			 				3.图标字体只支持单色图标
+			 	
+			 * */
+			a:link{
+				background: url(img/btn.png) 0 0;
+				height: 29px;
+				width: 93px;
+				display: block;
+			}
+			a:hover{
+				background: url(img/btn.png)-93px 0;
+				
+			}
+			a:active{
+				background: url(img/btn.png)-186px 0;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="#"></a>
+	</body>
+	<script type="text/javascript">
+			 var i = 1;
+			 console.log(++i + i++ +i)
+		</script>
+</html>
